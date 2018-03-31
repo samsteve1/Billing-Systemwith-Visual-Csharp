@@ -53,7 +53,7 @@ namespace BirthmarkStore.DAL
 
             try
             {
-                string sql = "INSERT INTO tbl_categories(title, description, added_date, aded_by) VALUES(@title, @description, @added_date, @added_by)";
+                string sql = "INSERT INTO tbl_categories(title, description, added_date, added_by) VALUES(@title, @description, @added_date, @added_by)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@title", category.title);
                 cmd.Parameters.AddWithValue("@description", category.description);
