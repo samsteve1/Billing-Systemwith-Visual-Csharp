@@ -59,5 +59,11 @@ namespace BirthmarkStore
             login.Show();
             this.Hide();
         }
+
+        private void categoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Categories category = new Categories();
+            category.Show();
+        }
     }
 }
