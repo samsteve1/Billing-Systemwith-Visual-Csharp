@@ -146,5 +146,15 @@ namespace BirthmarkStore.UI
                 MessageBox.Show("select a Category to delete.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtCatSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyWrods = txtCatSearch.Text.Trim();
+            if(keyWrods != null)
+            {
+                DataTable dt = dal.Search(keyWrods);
+                dataGridCat.DataSource = dt;
+            }
+        }
     }
 }

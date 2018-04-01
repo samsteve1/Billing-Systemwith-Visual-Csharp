@@ -159,6 +159,36 @@ namespace BirthmarkStore.DAL
             return status;
         }
         #endregion
+        #region Search Categories
+        public DataTable Search(string keywords)
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection conn = new SqlConnection(myConnString);
+            try
+            {
+                string sql = "SELECT * FROM tbl_categories WHERE title LIKE '%" + keywords + "%' OR description LIKE '%" + keywords + "%' OR id LIKE '%"+ keywords+"%'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
+        }
+        #endregion
 
     }
 }

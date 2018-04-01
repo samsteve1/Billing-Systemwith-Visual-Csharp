@@ -161,6 +161,7 @@
             this.txtCatSearch.Name = "txtCatSearch";
             this.txtCatSearch.Size = new System.Drawing.Size(256, 26);
             this.txtCatSearch.TabIndex = 9;
+            this.txtCatSearch.TextChanged += new System.EventHandler(this.txtCatSearch_TextChanged);
             // 
             // dataGridCat
             // 
