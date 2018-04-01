@@ -52,15 +52,16 @@ namespace BirthmarkStore.DAL
             SqlConnection conn = new SqlConnection(myConnString);
             try
             {
-                string sql = "INSERT INTO tbl_products(name, category, rate, qty, added_date, added_by) VALUES(@name, @category, @rate, @qty, @added_date, @added_by)";
+                string sql = "INSERT INTO tbl_products(name, category, rate, added_date, added_by, description) VALUES(@name, @category, @rate,  @added_date, @added_by, @description)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@name", product.Name);
                 cmd.Parameters.AddWithValue("@category", product.Category);
                 cmd.Parameters.AddWithValue("@rate", product.Rate);
-                cmd.Parameters.AddWithValue("@qty", product.Qty);
+               // cmd.Parameters.AddWithValue("@qty", product.Qty);
                 cmd.Parameters.AddWithValue("@added_date", product.Added_Date);
                 cmd.Parameters.AddWithValue("@added_by", product.Added_By);
+                cmd.Parameters.AddWithValue("@description", product.Description);
 
                 conn.Open();
 
@@ -95,15 +96,17 @@ namespace BirthmarkStore.DAL
 
             try
             {
-                string sql = "UPDATE tbl_products SET name=@name, category=@category, rate=@rate, qty=@qty, added_date=@added_date, added_by=@added_by WHERE id=@id";
+                string sql = "UPDATE tbl_products SET name=@name, category=@category, rate=@rate, added_date=@added_date, added_by=@added_by, description=@description WHERE id=@id";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
+                cmd.Parameters.AddWithValue("@id", product.Id);
                 cmd.Parameters.AddWithValue("@name", product.Name);
                 cmd.Parameters.AddWithValue("@category", product.Category);
                 cmd.Parameters.AddWithValue("@rate", product.Rate);
-                cmd.Parameters.AddWithValue("@qty", product.Qty);
+                
                 cmd.Parameters.AddWithValue("@added_date", product.Added_Date);
                 cmd.Parameters.AddWithValue("@added_by", product.Added_By);
+                cmd.Parameters.AddWithValue("@description", product.Description);
 
                 conn.Open();
 

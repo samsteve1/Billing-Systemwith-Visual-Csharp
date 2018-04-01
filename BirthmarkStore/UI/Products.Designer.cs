@@ -149,6 +149,7 @@
             // 
             this.txtProductId.Location = new System.Drawing.Point(138, 34);
             this.txtProductId.Name = "txtProductId";
+            this.txtProductId.ReadOnly = true;
             this.txtProductId.Size = new System.Drawing.Size(173, 26);
             this.txtProductId.TabIndex = 8;
             // 
@@ -206,6 +207,7 @@
             this.dataGridProducts.Name = "dataGridProducts";
             this.dataGridProducts.Size = new System.Drawing.Size(306, 170);
             this.dataGridProducts.TabIndex = 15;
+            this.dataGridProducts.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridProducts_RowHeaderMouseClick);
             // 
             // btnAdd
             // 
@@ -217,6 +219,7 @@
             this.btnAdd.TabIndex = 33;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -228,6 +231,7 @@
             this.btnDelete.TabIndex = 32;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -239,6 +243,7 @@
             this.btnUpdate.TabIndex = 31;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Products
             // 
@@ -265,10 +270,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Products";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Products_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
