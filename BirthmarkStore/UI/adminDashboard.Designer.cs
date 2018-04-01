@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dealerCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBottom.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +116,7 @@
             this.usersToolStripMenuItem,
             this.categoriesToolStripMenuItem,
             this.productsToolStripMenuItem,
+            this.dealerCustomerToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.transactionsToolStripMenuItem,
             this.logoutToolStripMenuItem});
@@ -170,6 +172,13 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Billing and Inventory Management System";
             // 
+            // dealerCustomerToolStripMenuItem
+            // 
+            this.dealerCustomerToolStripMenuItem.Name = "dealerCustomerToolStripMenuItem";
+            this.dealerCustomerToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.dealerCustomerToolStripMenuItem.Text = "Dealer && Customer";
+            this.dealerCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerCustomerToolStripMenuItem_Click);
+            // 
             // adminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -217,6 +226,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dealerCustomerToolStripMenuItem;
     }
 }
 

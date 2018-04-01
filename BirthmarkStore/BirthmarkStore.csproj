@@ -69,6 +69,12 @@
     <Compile Include="UI\Categories.Designer.cs">
       <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\DeaCust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeaCust.Designer.cs">
+      <DependentUpon>DeaCust.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeaCust.resx">
+      <DependentUpon>DeaCust.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

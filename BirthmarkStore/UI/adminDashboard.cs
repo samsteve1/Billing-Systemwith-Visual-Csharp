@@ -71,5 +71,11 @@ namespace BirthmarkStore
             Products productForm = new Products();
             productForm.Show();
         }
+
+        private void dealerCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeaCust delaerCus = new DeaCust();
+            delaerCus.Show();
+        }
     }
 }
