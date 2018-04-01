@@ -49,9 +49,11 @@
   <ItemGroup>
     <Compile Include="BLL\CategoryBll.cs" />
     <Compile Include="BLL\LoginBll.cs" />
+    <Compile Include="BLL\ProductBll.cs" />
     <Compile Include="BLL\UserBll.cs" />
     <Compile Include="DAL\CategoriesDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
+    <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="UI\adminDashboard.cs">
       <SubType>Form</SubType>
