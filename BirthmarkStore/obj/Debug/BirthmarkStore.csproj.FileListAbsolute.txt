@@ -11,3 +11,4 @@ C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing
 C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\obj\Debug\BirthmarkStore.UI.User.resources
 C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\obj\Debug\BirthmarkStore.UI.Login.resources
 C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\obj\Debug\BirthmarkStore.UI.Categories.resources
+C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\obj\Debug\BirthmarkStore.UI.Products.resources

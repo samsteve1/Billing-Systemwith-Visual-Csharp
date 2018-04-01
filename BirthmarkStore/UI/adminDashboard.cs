@@ -65,5 +65,11 @@ namespace BirthmarkStore
             Categories category = new Categories();
             category.Show();
         }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Products productForm = new Products();
+            productForm.Show();
+        }
     }
 }

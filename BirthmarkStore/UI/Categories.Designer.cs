@@ -232,7 +232,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "Categories";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Categories";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Categories_Load);
