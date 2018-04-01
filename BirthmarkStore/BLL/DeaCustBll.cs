@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BirthmarkStore.BLL
 {
-    class DeaCust
+    class DeaCustBll
     {
         public int Id { get; set; }
         public string  Type { get; set; }

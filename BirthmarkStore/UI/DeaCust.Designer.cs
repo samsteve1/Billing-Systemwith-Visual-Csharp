@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,10 +64,22 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(643, 34);
             this.panel1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkRed;
+            this.label4.Location = new System.Drawing.Point(629, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 18);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "X";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label2
             // 
@@ -102,18 +114,6 @@
             this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dealer && Customer";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkRed;
-            this.label4.Location = new System.Drawing.Point(629, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 18);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "X";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -173,6 +173,7 @@
             // 
             this.txtDeaCusId.Location = new System.Drawing.Point(117, 42);
             this.txtDeaCusId.Name = "txtDeaCusId";
+            this.txtDeaCusId.ReadOnly = true;
             this.txtDeaCusId.Size = new System.Drawing.Size(155, 26);
             this.txtDeaCusId.TabIndex = 10;
             // 
@@ -208,6 +209,9 @@
             // cmbDeaCusType
             // 
             this.cmbDeaCusType.FormattingEnabled = true;
+            this.cmbDeaCusType.Items.AddRange(new object[] {
+            "Customer",
+            "Dealer"});
             this.cmbDeaCusType.Location = new System.Drawing.Point(117, 74);
             this.cmbDeaCusType.Name = "cmbDeaCusType";
             this.cmbDeaCusType.Size = new System.Drawing.Size(155, 28);
@@ -228,6 +232,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(279, 26);
             this.txtSearch.TabIndex = 17;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dataGridDeaCus
             // 
@@ -236,6 +241,7 @@
             this.dataGridDeaCus.Name = "dataGridDeaCus";
             this.dataGridDeaCus.Size = new System.Drawing.Size(345, 196);
             this.dataGridDeaCus.TabIndex = 18;
+            this.dataGridDeaCus.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridDeaCus_RowHeaderMouseClick);
             // 
             // btnAdd
             // 
@@ -247,6 +253,7 @@
             this.btnAdd.TabIndex = 36;
             this.btnAdd.Text = "Add New";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -258,6 +265,7 @@
             this.btnDelete.TabIndex = 35;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -269,6 +277,7 @@
             this.btnUpdate.TabIndex = 34;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // DeaCust
             // 
@@ -297,12 +306,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DeaCust";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Type";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.DeaCust_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDeaCus)).EndInit();
