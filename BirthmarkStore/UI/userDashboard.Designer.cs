@@ -50,15 +50,15 @@
             this.panelBottom.Controls.Add(this.label2);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBottom.ForeColor = System.Drawing.Color.White;
-            this.panelBottom.Location = new System.Drawing.Point(0, 320);
+            this.panelBottom.Location = new System.Drawing.Point(0, 468);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(605, 31);
+            this.panelBottom.Size = new System.Drawing.Size(964, 31);
             this.panelBottom.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 5);
+            this.label2.Location = new System.Drawing.Point(383, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 20);
             this.label2.TabIndex = 0;
@@ -71,14 +71,14 @@
             this.panelTop.ForeColor = System.Drawing.Color.White;
             this.panelTop.Location = new System.Drawing.Point(0, 24);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(605, 27);
+            this.panelTop.Size = new System.Drawing.Size(964, 27);
             this.panelTop.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(80, 179);
+            this.label4.Location = new System.Drawing.Point(191, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(445, 24);
             this.label4.TabIndex = 10;
@@ -88,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(166, 147);
+            this.label3.Location = new System.Drawing.Point(277, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(262, 32);
             this.label3.TabIndex = 9;
@@ -121,7 +121,7 @@
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(605, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(964, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStripUserTop";
             // 
@@ -130,6 +130,7 @@
             this.purchaseToolStripMenuItem.Name = "purchaseToolStripMenuItem";
             this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.purchaseToolStripMenuItem.Text = "Purchase";
+            this.purchaseToolStripMenuItem.Click += new System.EventHandler(this.purchaseToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
             // 
@@ -154,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 351);
+            this.ClientSize = new System.Drawing.Size(964, 499);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);

@@ -40,5 +40,12 @@ namespace BirthmarkStore
             login.Show();
             this.Hide();
         }
+
+        private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Purchase purchase = new Purchase();
+            purchase.Show();
+           
+        }
     }
 }
