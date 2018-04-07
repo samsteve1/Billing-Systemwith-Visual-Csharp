@@ -200,5 +200,86 @@ namespace BirthmarkStore.DAL
             return dt;
         }
         #endregion
+        #region Search for Products
+        public ProductBll Seachproduct(string keyword)
+        {
+            ProductBll product = new ProductBll();
+
+            SqlConnection conn = new SqlConnection(myConnString);
+
+            try
+            {
+                string sql = "SELECT name, rate, qty FROM tbl_products WHERE id LIKE '%"+keyword+"%' OR name LIKE '%"+keyword+"%'";
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if(dt.Rows.Count > 0)
+                {
+                    product.Name = dt.Rows[0]["name"].ToString();
+                    product.Rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
+                    product.Qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
+                }
+                else
+                {
+                    product.Name = "Not Found";
+                    product.Rate = 0M;
+                    product.Qty = 0M;
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return product;
+        }
+
+        #endregion
+        #region Get Product
+        public ProductBll GetProduct(string pName)
+        {
+            ProductBll product = new ProductBll();
+            SqlConnection conn = new SqlConnection(myConnString);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT id FROM tbl_products WHERE name = '" + pName + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    product.Id = int.Parse(dt.Rows[0]["id"].ToString());
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return product;
+
+        }
+        #endregion
     }
 }

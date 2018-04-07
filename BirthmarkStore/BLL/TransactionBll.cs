@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace BirthmarkStore.BLL
 {
@@ -16,5 +17,6 @@ namespace BirthmarkStore.BLL
         public decimal tax { get; set; }
         public decimal discount { get; set; }
         public int added_by { get; set; }
+        public DataTable transactionDetails { get; set; }
     }
 }

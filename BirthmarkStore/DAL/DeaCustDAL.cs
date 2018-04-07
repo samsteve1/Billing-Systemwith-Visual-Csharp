@@ -197,5 +197,85 @@ namespace BirthmarkStore.DAL
             return dt;
         }
         #endregion
+        #region Search Dealer or Customer
+        public DeaCustBll SearchDealerCustomer(string keyword)
+        {
+            DeaCustBll dc = new DeaCustBll();
+
+            SqlConnection conn = new SqlConnection(myConnString);
+
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT name, email, contact, address FROM tbl_dea_cust WHERE id LIKE '%"+keyword+"%' OR name LIKE '%"+keyword+"%'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if(dt.Rows.Count > 0)
+                {
+                    dc.Name = dt.Rows[0]["name"].ToString();
+                    dc.Email = dt.Rows[0]["email"].ToString();
+                    dc.Contact = dt.Rows[0]["contact"].ToString();
+                    dc.Address = dt.Rows[0]["address"].ToString();
+                }
+                else
+                {
+                    dc.Name = "Not Found";
+                    dc.Email = "Not Found"; 
+                    dc.Contact = "Not Found";
+                    dc.Address = "Not Found";
+
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dc;
+        }
+        #endregion
+        #region Get ID
+        public DeaCustBll GetDeaCust(string name)
+        {
+            DeaCustBll dc = new DeaCustBll();
+            SqlConnection conn = new SqlConnection(myConnString);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT id FROM tbl_dea_cust WHERE name = '"+name+"'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+
+                adapter.Fill(dt);
+                if(dt.Rows.Count > 0)
+                {
+                    dc.Id = int.Parse(dt.Rows[0]["id"].ToString());
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dc;
+
+        }
+        #endregion
     }
 }

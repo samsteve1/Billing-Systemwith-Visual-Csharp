@@ -16,7 +16,7 @@ namespace BirthmarkStore
         {
             InitializeComponent();
         }
-
+       public static string transactionType;
         private void userDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             Login login = new Login();
@@ -43,9 +43,17 @@ namespace BirthmarkStore
 
         private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            transactionType = "Purchase";
             Purchase purchase = new Purchase();
             purchase.Show();
            
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            transactionType = "Sales";
+            Purchase purchase = new Purchase();
+            purchase.Show();
         }
     }
 }

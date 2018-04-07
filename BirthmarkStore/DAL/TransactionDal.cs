@@ -24,7 +24,7 @@ namespace BirthmarkStore.DAL
             try
             {
                 string sql = "INSERT INTO tbl_transaction(type, dea_cust_id, grandTotal, transaction_date, tax, discount, added_by)"+
-                                "VALUES(@type, @dea_cust_id, @grandTotal, @transaction_date, @tax, @discount, @added_by)";
+                                "VALUES(@type, @dea_cust_id, @grandTotal, @transaction_date, @tax, @discount, @added_by); SELECT @@IDENTITY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 

@@ -15,6 +15,7 @@ namespace BirthmarkStore.BLL
         public decimal total { get; set; }
         public int dea_cust_id { get; set; }
         public DateTime added_date { get; set; }
+        public int productId { get; set; }
         public int added_by { get; set; }
     }
 }

@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,11 +52,15 @@
     <Compile Include="BLL\DeaCustBll.cs" />
     <Compile Include="BLL\LoginBll.cs" />
     <Compile Include="BLL\ProductBll.cs" />
+    <Compile Include="BLL\TransactionBll.cs" />
+    <Compile Include="BLL\TransactionDetailsBll.cs" />
     <Compile Include="BLL\UserBll.cs" />
     <Compile Include="DAL\CategoriesDAL.cs" />
     <Compile Include="DAL\DeaCustDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
+    <Compile Include="DAL\TransactionDal.cs" />
+    <Compile Include="DAL\TransactionDetailDal.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="UI\adminDashboard.cs">
       <SubType>Form</SubType>
