@@ -37,12 +37,12 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dealerCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsername = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dealerCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelBottom.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +109,7 @@
             this.transactionsToolStripMenuItem.Name = "transactionsToolStripMenuItem";
             this.transactionsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.transactionsToolStripMenuItem.Text = "Transactions";
+            this.transactionsToolStripMenuItem.Click += new System.EventHandler(this.transactionsToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -126,6 +127,13 @@
             this.menuStrip1.Size = new System.Drawing.Size(805, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStripTop";
+            // 
+            // dealerCustomerToolStripMenuItem
+            // 
+            this.dealerCustomerToolStripMenuItem.Name = "dealerCustomerToolStripMenuItem";
+            this.dealerCustomerToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.dealerCustomerToolStripMenuItem.Text = "Dealer && Customer";
+            this.dealerCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerCustomerToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -171,13 +179,6 @@
             this.label4.Size = new System.Drawing.Size(445, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "Billing and Inventory Management System";
-            // 
-            // dealerCustomerToolStripMenuItem
-            // 
-            this.dealerCustomerToolStripMenuItem.Name = "dealerCustomerToolStripMenuItem";
-            this.dealerCustomerToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
-            this.dealerCustomerToolStripMenuItem.Text = "Dealer && Customer";
-            this.dealerCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerCustomerToolStripMenuItem_Click);
             // 
             // adminDashboard
             // 

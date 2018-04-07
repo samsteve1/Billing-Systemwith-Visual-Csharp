@@ -233,16 +233,17 @@ namespace BirthmarkStore.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string transactionType = lblType.Text;
             TransactionBll transaction = new TransactionBll();
 
-            transaction.type = lblType.Text;
+            transaction.type = transactionType;
 
             string deaCustName = txtcusName.Text;
             DeaCustBll dc = dal.GetDeaCust(deaCustName);
 
             transaction.dea_cust_id = dc.Id;
 
-            transaction.grandTotal = Math.Round(decimal.Parse(txtGrandTotal.Text), 2);
+            transaction.grandTotal = Math.Round(decimal.Parse(txtGrandTotal.Text.ToString()), 2);
             transaction.transaction_date = DateTime.Now;
             transaction.tax = decimal.Parse(txtVat.Text);
             transaction.discount = decimal.Parse(txtDiscount.Text);
@@ -271,10 +272,22 @@ namespace BirthmarkStore.UI
                     transactionDetail.dea_cust_id = dc.Id;
                     transactionDetail.added_date = DateTime.Now;
                     transactionDetail.added_by = u.id;
+                    //update product quantity
+                    bool x = false;
+                    if(transactionType == "Purchase")
+                    {
+                        //Increase product qty
+                         x = pDal.IncreaseProductQuantity(transactionDetail.product_id, transactionDetail.qty);
+                    }
+                    else if(transactionType == "Sales")
+                    {
+                        //decrease product qty
+                         x = pDal.DecreaseProductQty(transactionDetail.product_id, transactionDetail.qty);
 
+                    }
                     //insert trans details in db.
                     bool y = tdDal.Insert(transactionDetail);
-                    insert = w && y;         
+                    insert = w && x && y;         
                     
                }
                 if (insert)

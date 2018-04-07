@@ -44,6 +44,7 @@ namespace BirthmarkStore.DAL
             return dt;
         }
         #endregion
+
         #region Insert
         public bool Insert(ProductBll product)
         {
@@ -88,6 +89,7 @@ namespace BirthmarkStore.DAL
             return status;
         }
         #endregion
+
         #region Update Product
         public bool Update(ProductBll product)
         {
@@ -132,6 +134,7 @@ namespace BirthmarkStore.DAL
             return status;
         }
         #endregion
+
         #region Delete Product
         public bool Delete(ProductBll produt)
         {
@@ -168,6 +171,7 @@ namespace BirthmarkStore.DAL
             return status;
         }
         #endregion
+
         #region Search products
         public DataTable Search(string keywords)
         {
@@ -200,6 +204,7 @@ namespace BirthmarkStore.DAL
             return dt;
         }
         #endregion
+
         #region Search for Products
         public ProductBll Seachproduct(string keyword)
         {
@@ -246,6 +251,7 @@ namespace BirthmarkStore.DAL
         }
 
         #endregion
+
         #region Get Product
         public ProductBll GetProduct(string pName)
         {
@@ -281,5 +287,125 @@ namespace BirthmarkStore.DAL
 
         }
         #endregion
+
+        #region Get Current Product Quantity
+       public decimal GetProductQty(int productId)
+        {
+            SqlConnection conn = new SqlConnection(myConnString);
+            decimal qty = 0;
+
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT qty FROM tbl_products WHERE id=@id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", productId);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+
+                if(dt.Rows.Count > 0)
+                {
+                    qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return qty;
+        }
+
+
+        #endregion
+
+        #region Update Product Qty
+        public bool UpdateProductQty(int productId, decimal qty)
+        {
+            bool update = false;
+
+            SqlConnection con = new SqlConnection(myConnString);
+
+            try
+            {
+                string sql = "UPDATE tbl_products SET qty=@qty WHERE id=@id";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@qty", qty);
+                cmd.Parameters.AddWithValue("@id", productId);
+
+                con.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if(rows > 0)
+                {
+                    update = true;
+                }
+                else
+                {
+                    update = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
+            return update;
+        }
+        #endregion
+
+        #region Increase Product Quantity
+        public bool IncreaseProductQuantity(int productId, decimal qty)
+        {
+            bool increase = false;
+
+          /*  SqlConnection conn = new SqlConnection(myConnString);
+
+            try
+            {
+                //get current qty */
+                decimal currentQty = GetProductQty(productId);
+                //increase current qty
+                decimal newQty = currentQty + qty;
+                //update product qty;
+                increase = UpdateProductQty(productId, newQty);
+                
+          /*  }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            } */
+            return increase;
+        }
+        #endregion
+
+        #region Decrease product qty
+        public bool DecreaseProductQty(int productId, decimal qty)
+        {
+            bool decrease = false;
+
+            decimal currentQty = GetProductQty(productId);
+
+            decimal newQty = currentQty - qty;
+
+            decrease = UpdateProductQty(productId, newQty);
+
+            return decrease;
+        }
+
+        #endregion
+
     }
 }

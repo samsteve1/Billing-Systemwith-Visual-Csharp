@@ -77,5 +77,12 @@ namespace BirthmarkStore
             DeaCust delaerCus = new DeaCust();
             delaerCus.Show();
         }
+
+        private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Transactions transaction = new Transactions();
+            transaction.Show();
+            
+        }
     }
 }
