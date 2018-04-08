@@ -60,5 +60,64 @@ namespace BirthmarkStore.DAL
 
         }
         #endregion
+
+        #region Get all transactions
+        public DataTable GetAllTrans()
+        {
+            DataTable transaction = new DataTable();
+
+            SqlConnection conn = new SqlConnection(myConString);
+            try
+            {
+                string sql = "SELECT * FROM tbl_transaction";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(transaction);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return transaction;
+        }
+        #endregion
+
+        #region Get Transactions based on Type
+        public DataTable GetTransactionByType(string type)
+        {
+            DataTable transactions = new DataTable();
+
+            SqlConnection conn = new SqlConnection(myConString);
+
+            try
+            {
+                string sql = "SELECT * FROM tbl_transaction WHERE type=@type";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@type", type);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(transactions);
+                conn.Open();
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return transactions;
+
+        }
+        #endregion
     }
 }

@@ -15,3 +15,4 @@ C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing
 C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\obj\Debug\BirthmarkStore.UI.DeaCust.resources
 C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\obj\Debug\BirthmarkStore.UI.Purchase.resources
 C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\obj\Debug\BirthmarkStore.UI.Transactions.resources
+C:\Users\Steve\Documents\Visual Studio 2015\Projects\csthing\fulltext\db\Billing System\BirthmarkStore\BirthmarkStore\bin\Debug\Bunifu_UI_v1.5.3.dll

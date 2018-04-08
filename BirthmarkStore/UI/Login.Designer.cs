@@ -33,6 +33,7 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
             this.panelBottom.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -109,6 +109,18 @@
             this.panel1.Size = new System.Drawing.Size(249, 269);
             this.panel1.TabIndex = 7;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Bookman Old Style", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblError.Location = new System.Drawing.Point(36, 34);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 15);
+            this.lblError.TabIndex = 23;
+            this.lblError.Visible = false;
+            this.lblError.Click += new System.EventHandler(this.label7_Click);
+            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
@@ -144,7 +156,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(22, 70);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(197, 26);
+            this.txtUsername.Size = new System.Drawing.Size(207, 26);
             this.txtUsername.TabIndex = 19;
             // 
             // label6
@@ -185,18 +197,6 @@
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 15;
             this.label3.Text = "LOGIN";
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Bookman Old Style", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblError.Location = new System.Drawing.Point(36, 34);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 15);
-            this.lblError.TabIndex = 23;
-            this.lblError.Visible = false;
-            this.lblError.Click += new System.EventHandler(this.label7_Click);
             // 
             // Login
             // 

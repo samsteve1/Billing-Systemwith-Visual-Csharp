@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BirthmarkStore.DAL;
 
 namespace BirthmarkStore.UI
 {
@@ -16,6 +17,7 @@ namespace BirthmarkStore.UI
         {
             InitializeComponent();
         }
+        TransactionDal tDal = new TransactionDal();
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -25,6 +27,22 @@ namespace BirthmarkStore.UI
         private void Transactions_Load(object sender, EventArgs e)
         {
             cmbTransactionType.SelectedIndex = 0;
+            ShowAllTransactions();
+        }
+        private void ShowAllTransactions()
+        {
+            dgvTransaction.DataSource = tDal.GetAllTrans();
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            ShowAllTransactions();
+        }
+
+        private void cmbTransactionType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string transType = cmbTransactionType.Text;
+            dgvTransaction.DataSource = tDal.GetTransactionByType(transType);
         }
     }
 }
