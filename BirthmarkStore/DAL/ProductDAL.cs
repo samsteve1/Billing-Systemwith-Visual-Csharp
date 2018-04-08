@@ -407,5 +407,34 @@ namespace BirthmarkStore.DAL
 
         #endregion
 
+        #region Get Product based on category
+        public DataTable GetProductByCategory(string category)
+        {
+            DataTable products = new DataTable();
+
+            SqlConnection conn = new SqlConnection(myConnString);
+
+            try
+            {
+                string sql = "SELECT * FROM tbl_products WHERE category=@category";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@category", category);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(products);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return products;
+        }
+        #endregion
+
     }
 }

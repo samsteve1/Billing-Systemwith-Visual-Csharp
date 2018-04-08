@@ -84,5 +84,11 @@ namespace BirthmarkStore
             transaction.Show();
             
         }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory();
+            inventory.Show();
+        }
     }
 }
